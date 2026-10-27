@@ -1,18 +1,28 @@
 [workspace]
 channels = ["conda-forge"]
 name = "weiming_website"
-platforms = ["linux-64"]
+platforms = ["linux-64", "osx-arm64"]
 version = "0.1.0"
 
 [tasks]
+# Resume PDFs (Quarto + tectonic)
+resume = { cmd = "quarto render resume_embodied_ai.qmd", cwd = "resume" }
+resume-zh = { cmd = "quarto render resume_embodied_ai_zh.qmd", cwd = "resume" }
+
+# Website (Astro + Tailwind, lives in web/)
+install = { cmd = "pnpm install --frozen-lockfile", cwd = "web" }
+copy-resume = "mkdir -p web/public && cp resume/Resume_WongWeiMing.pdf resume/简历_黄韦茗.pdf web/public/"
+dev = { cmd = "pnpm dev", cwd = "web", depends-on = ["install", "copy-resume"] }
+build = { cmd = "pnpm build", cwd = "web", depends-on = ["install", "copy-resume"] }
+preview = { cmd = "pnpm preview", cwd = "web", depends-on = ["build"] }
 
 [activation.env]
 FONTCONFIG_FILE = "$CONDA_PREFIX/etc/fonts/fonts.conf"
 FONTCONFIG_PATH = "$CONDA_PREFIX/etc/fonts"
 
 [dependencies]
-zensical = ">=0.0.20,<0.0.21"
 quarto = ">=1.9.38,<2"
 tectonic = "*"
 mscorefonts = ">=0.0.1,<0.0.2"
-
+nodejs = "24.*"
+pnpm = "*"

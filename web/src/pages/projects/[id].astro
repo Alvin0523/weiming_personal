@@ -1,0 +1,56 @@
+---
+import { getCollection, render, type CollectionEntry } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import { url } from '../../lib/url';
+
+export async function getStaticPaths() {
+  const projects = await getCollection('projects');
+  return projects.map((project) => ({ params: { id: project.id }, props: { project } }));
+}
+
+interface Props {
+  project: CollectionEntry<'projects'>;
+}
+
+const { project } = Astro.props;
+const { title, summary, period, context, award, tags, github, youtube, video, ongoing } = project.data;
+const { Content } = await render(project);
+---
+
+<Base title={title} description={summary}>
+  <a href={url('/projects/')} class="text-sm text-zinc-500 no-underline hover:text-accent">← Projects</a>
+  <h1 class="mt-4 text-2xl font-semibold tracking-tight">{title}</h1>
+  <p class="mt-2 text-sm text-zinc-500">
+    {period}{ongoing && ' · ongoing'}{context && ` · ${context}`}
+  </p>
+  {award && <p class="mt-2 text-sm font-medium text-amber-700 dark:text-amber-400">🏆 {award}</p>}
+
+  {
+    youtube && (
+      <div class="mt-8 aspect-video overflow-hidden rounded-xl bg-zinc-100 dark:bg-zinc-900">
+        <iframe
+          class="size-full"
+          src={`https://www.youtube-nocookie.com/embed/${youtube}`}
+          title={title}
+          loading="lazy"
+          allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        />
+      </div>
+    )
+  }
+  {
+    video && !youtube && (
+      <video class="mt-8 w-full rounded-xl" src={url(video)} autoplay loop muted playsinline />
+    )
+  }
+
+  <div class="prose prose-zinc mt-8 max-w-none dark:prose-invert prose-code:before:content-none prose-code:after:content-none">
+    <Content />
+  </div>
+
+  <div class="mt-8 flex flex-wrap items-center gap-3">
+    {github && <a href={github} class="rounded-md border border-zinc-300 px-3 py-1.5 text-sm no-underline hover:border-accent dark:border-zinc-700">Code on GitHub</a>}
+    {tags.map((tag) => <span class="rounded-full bg-zinc-100 px-2 py-0.5 text-xs text-zinc-600 dark:bg-zinc-800 dark:text-zinc-300">{tag}</span>)}
+  </div>
+</Base>

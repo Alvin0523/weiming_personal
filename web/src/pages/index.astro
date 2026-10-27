@@ -1,0 +1,64 @@
+---
+import { getCollection, render } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import Section from '../components/Section.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import { site } from '../site';
+import { url } from '../lib/url';
+
+const featured = (await getCollection('projects', (p) => p.data.featured)).sort(
+  (a, b) => b.data.start.valueOf() - a.data.start.valueOf(),
+);
+const news = (await getCollection('news')).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+const newsItems = await Promise.all(news.map(async (n) => ({ n, Content: (await render(n)).Content })));
+const fmt = (d: Date) => d.toLocaleDateString('en-GB', { month: 'short', year: 'numeric' });
+---
+
+<Base>
+  <section class="flex flex-col-reverse gap-8 pt-6 sm:flex-row sm:items-center">
+    <div class="flex-1">
+      <h1 class="text-3xl font-semibold tracking-tight">{site.name}</h1>
+      <p class="mt-2 text-zinc-500 dark:text-zinc-400">{site.tagline}</p>
+      <p class="mt-5 leading-relaxed">
+        I build robots that perceive, reason and act in the physical world. My work spans robot learning for
+        manipulation, vision-language-action policies on edge hardware, and perception for underwater and mobile
+        robots. I'm a final-year Computer Engineering student at NTU Singapore and was an exchange student at HKUST.
+      </p>
+      <div class="mt-6 flex flex-wrap gap-3 text-sm">
+        <a href={site.links.github} class="rounded-md bg-zinc-900 px-3 py-1.5 text-white no-underline hover:bg-zinc-700 dark:bg-zinc-100 dark:text-zinc-900 dark:hover:bg-zinc-300">GitHub</a>
+        <a href={site.links.linkedin} class="rounded-md border border-zinc-300 px-3 py-1.5 no-underline hover:border-accent dark:border-zinc-700">LinkedIn</a>
+        <a href={url(`/${site.resume.en}`)} class="rounded-md border border-zinc-300 px-3 py-1.5 no-underline hover:border-accent dark:border-zinc-700">Resume (PDF)</a>
+        <a href={`mailto:${site.email}`} class="rounded-md border border-zinc-300 px-3 py-1.5 no-underline hover:border-accent dark:border-zinc-700">Email</a>
+      </div>
+    </div>
+    <img
+      src={url('/profile_photo.jpg')}
+      alt={`Portrait of ${site.name}`}
+      width="144"
+      height="144"
+      class="size-36 rounded-full object-cover ring-1 ring-zinc-200 dark:ring-zinc-800"
+    />
+  </section>
+
+  <Section title="News">
+    <ul class="space-y-2 text-sm">
+      {
+        newsItems.map(({ n, Content }) => (
+          <li class="flex gap-4">
+            <span class="w-20 shrink-0 text-zinc-500 tabular-nums">{fmt(n.data.date)}</span>
+            <div class="[&_p]:m-0">
+              <Content />
+            </div>
+          </li>
+        ))
+      }
+    </ul>
+  </Section>
+
+  <Section title="Selected projects">
+    <div class="grid gap-4">
+      {featured.map((project) => <ProjectCard project={project} />)}
+    </div>
+    <a href={url('/projects/')} class="mt-5 inline-block text-sm text-accent dark:text-accent-dark">All projects →</a>
+  </Section>
+</Base>
