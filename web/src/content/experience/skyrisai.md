@@ -1,6 +1,6 @@
 ---
 org: SkyrisAI
-role: ROS Architecture Engineer
+role: ROS Developer Intern
 period: Dec 2025 – Jan 2026
 start: 2025-12-01
 location: Shenzhen, China

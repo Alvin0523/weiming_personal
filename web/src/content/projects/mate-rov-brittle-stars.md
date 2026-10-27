@@ -8,4 +8,9 @@ award: Rank 9 (international)
 tags: [YOLOv10, Computer Vision, Synthetic Data, OpenCV]
 ---
 
-Developed software to detect brittle stars in dark, murky underwater environments using YOLOv10 models trained with synthetic data generation, for the MATE ROV 2024 Ocean Exploration Video Challenge.
+MATE ROV 2024 Ocean Exploration Video Challenge: detect brittle stars in dark, murky underwater footage. Ranked 9th internationally.
+
+- Trained **YOLOv10** detectors on a mix of real underwater images and synthetic data generated in **Unity**.
+- Augmented the dataset in Roboflow to handle low light and turbidity.
+- Used sliced inference to catch very small brittle stars while keeping inference fast.
+- Built with Python and OpenCV.

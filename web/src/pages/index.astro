@@ -1,5 +1,5 @@
 ---
-import { getCollection, render } from 'astro:content';
+import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
 import Section from '../components/Section.astro';
 import ProjectCard from '../components/ProjectCard.astro';
@@ -9,9 +9,6 @@ import { url } from '../lib/url';
 const featured = (await getCollection('projects', (p) => p.data.featured)).sort(
   (a, b) => b.data.start.valueOf() - a.data.start.valueOf(),
 );
-const news = (await getCollection('news')).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
-const newsItems = await Promise.all(news.map(async (n) => ({ n, Content: (await render(n)).Content })));
-const fmt = (d: Date) => d.toLocaleDateString('en-GB', { month: 'short', year: 'numeric' });
 ---
 
 <Base>
@@ -39,21 +36,6 @@ const fmt = (d: Date) => d.toLocaleDateString('en-GB', { month: 'short', year: '
       class="size-36 rounded-full object-cover ring-1 ring-zinc-200 dark:ring-zinc-800"
     />
   </section>
-
-  <Section title="News">
-    <ul class="space-y-2 text-sm">
-      {
-        newsItems.map(({ n, Content }) => (
-          <li class="flex gap-4">
-            <span class="w-20 shrink-0 text-zinc-500 tabular-nums">{fmt(n.data.date)}</span>
-            <div class="[&_p]:m-0">
-              <Content />
-            </div>
-          </li>
-        ))
-      }
-    </ul>
-  </Section>
 
   <Section title="Selected projects">
     <div class="grid gap-4">

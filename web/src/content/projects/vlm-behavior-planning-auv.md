@@ -6,7 +6,6 @@ start: 2024-08-01
 context: NTU URECA (CCDS24070) · Supervised by Assoc Prof Nicholas Vun
 award: NTU President's Research Scholar
 tags: [VLM, VILA, Behavior Trees, Jetson Orin NX, AUV]
-featured: true
 ---
 
 - Deployed a 4-bit AWQ-quantized **VILA** Vision-Language Model on an **NVIDIA Jetson Orin NX** (16 GB) under a 25 W power budget for pool AUV operations (~3.1 s latency).

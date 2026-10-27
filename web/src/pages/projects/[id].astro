@@ -13,7 +13,7 @@ interface Props {
 }
 
 const { project } = Astro.props;
-const { title, summary, period, context, award, tags, github, youtube, video, ongoing } = project.data;
+const { title, summary, period, context, award, team, tags, github, docs, youtube, video, ongoing } = project.data;
 const { Content } = await render(project);
 ---
 
@@ -23,6 +23,7 @@ const { Content } = await render(project);
   <p class="mt-2 text-sm text-zinc-500">
     {period}{ongoing && ' · ongoing'}{context && ` · ${context}`}
   </p>
+  {team && <p class="mt-1 text-sm text-zinc-500">With {team}</p>}
   {award && <p class="mt-2 text-sm font-medium text-amber-700 dark:text-amber-400">🏆 {award}</p>}
 
   {
@@ -50,6 +51,7 @@ const { Content } = await render(project);
   </div>
 
   <div class="mt-8 flex flex-wrap items-center gap-3">
+    {docs && <a href={docs} class="rounded-md border border-zinc-300 px-3 py-1.5 text-sm no-underline hover:border-accent dark:border-zinc-700">Docs</a>}
     {github && <a href={github} class="rounded-md border border-zinc-300 px-3 py-1.5 text-sm no-underline hover:border-accent dark:border-zinc-700">Code on GitHub</a>}
     {tags.map((tag) => <span class="rounded-full bg-zinc-100 px-2 py-0.5 text-xs text-zinc-600 dark:bg-zinc-800 dark:text-zinc-300">{tag}</span>)}
   </div>

@@ -2,7 +2,8 @@
 title: "VLASH-Piper: Real-Time Async VLA Deployment on Edge"
 summary: Fine-tuned a π0.5 vision-language-action policy for a 6-DOF arm and ran it at 30 Hz on a Jetson AGX Orin with asynchronous inference.
 period: Feb 2026 – May 2026
-start: 2026-02-01
+start: 2026-02-06
+team: Ray
 context: HKUST COMP4901D Embedded AI Systems
 award: Best Project Runner-Up Award
 tags: [VLA, π0.5, LeRobot, Jetson AGX Orin, AgileX Piper]

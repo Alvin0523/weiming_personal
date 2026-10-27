@@ -12,7 +12,9 @@ const projects = defineCollection({
     context: z.string().optional(),
     award: z.string().optional(),
     tags: z.array(z.string()).default([]),
+    team: z.string().optional(),
     github: z.url().optional(),
+    docs: z.url().optional(),
     // YouTube video id, or a path under public/ for a short MP4/WebM loop
     youtube: z.string().optional(),
     video: z.string().optional(),
@@ -33,11 +35,4 @@ const experience = defineCollection({
   }),
 });
 
-const news = defineCollection({
-  loader: glob({ pattern: '**/*.md', base: './src/content/news' }),
-  schema: z.object({
-    date: z.coerce.date(),
-  }),
-});
-
-export const collections = { projects, experience, news };
+export const collections = { projects, experience };

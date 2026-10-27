@@ -46,13 +46,12 @@ Semester Exchange
 
 ## ACHIEVEMENTS
 
-- **NTU President Research Scholar** (URECA) — Undergraduate Research
-- **3rd Place** — Robonation RoboSub 2026 (International Level)
+- **NTU President's Research Scholar** (URECA) — Undergraduate Research
 - **Champion** — Singapore AUV Challenge 2025 (International Level)
-- **Semifinalist** (Top 10) & **Best New All-Rounders** — Robonation RoboSub 2025 (International Level)
+- **Top 8**, **Best New All-Rounder** & **City of Irvine Award** — RoboNation RoboSub 2025 (International Level)
 - **Finalist** — HacX @ HTX 2025
 - **Finalist** — NTU Escendo @ Garage EEE 2025 (School Level)
-- **Rank 9** — Ocean Exploration Video Challenge, MATEROV 2024 (International Level)
+- **Rank 9** — Ocean Exploration Video Challenge, MATE ROV 2024 (International Level)
 
 ## SKILLS
 
@@ -68,32 +67,32 @@ Semester Exchange
 
 **Mecatron (NTU Maritime Robotics Team)** \hfill \textbf{Aug 2024 – Present}
 
-*Advisor | Former President & Perception Lead*
+*Advisor | Former Mecatron Lead & Perception Team Lead*
 
-- **Club & Technical Leadership:** Directed a 60-member robotics club as President while managing a 10-member perception engineering team; currently serving as Advisor guiding technical governance, system architecture design, and internal administration.
+- **Club & Technical Leadership:** Directed a 60-member robotics club as Mecatron Lead while managing a 10-member perception engineering team; currently serving as Advisor guiding technical governance, system architecture design, and internal administration.
 - **System Architecture & Autonomous Planning:** Architected a modular ROS 2 software stack utilizing **BehaviorTree.CPP (C++)** for state machine task sequencing and **Software-in-the-Loop (SITL) simulation**, cutting physical pool debugging time by ~40%.
-- **3D Computer Vision & Perception Pipeline:** Engineered an underwater perception stack combining **YOLO object detection** and **Depth Anything v3** for real-time 3D target localization and visual navigation; conducted stereo vision experiments to enhance spatial perception in low-visibility environments.
+- **3D Computer Vision & Perception Pipeline:** Engineered an underwater perception stack combining **YOLO object detection** and **Depth Anything 3** for real-time 3D target localization and visual navigation; conducted stereo vision experiments to enhance spatial perception in low-visibility environments.
 - **Curriculum & Workshop Mentorship:** Designed and delivered technical training covering Computer Vision (CNNs, YOLO model deployment) and ROS 2 probation workshops, training 150+ NTU students and onboarding 10+ core perception engineers.
-- **Competition Track Record:** Software and perception contributions directly powered the AUV to achieve **Champion at SAUVC 2025**, **Top 10 Semifinalist & Best New All-Rounders at RoboSub 2025**, and **3rd Place at RoboSub 2026 (International)**.
+- **Competition Track Record:** Software and perception contributions directly powered the AUV to achieve **Champion at SAUVC 2025** and **Top 8, Best New All-Rounder & City of Irvine Award at RoboSub 2025**.
 
 **Cheng Kar-Shun Robotics Institute (CKSRI), HKUST** \hfill \textbf{Mar 2026 – May 2026}
 
 *Undergraduate Research Assistant* | *Supervised by Prof. Ling Shi (Director, CKSRI)*
 
 - **Mobile Manipulator System Integration:** Executed full-stack hardware-software bring-up for an **AgileX Scout Mini 4WD UGV** mounted with an **AgileX Piper 6-DOF arm**, configuring `ugv_sdk` C++ CAN bus communication and `scout_ros2` node lifecycles.
-- **IMU-Free Laser Odometry & SLAM Navigation:** Integrated **Richbeam 2D LiDAR** (`Lakibeam_ROS2_Driver`) with **`rf2o_laser_odometry`** to compute real-time range-flow 2D base odometry on an IMU-less robot; combined with **Nav2** and **reflective marker intensity tracking** for sub-centimeter base positioning.
-- **MoveIt 2 Trajectory Planning & Public Showcase:** Engineered a **MoveIt 2** motion planning pipeline on the Piper arm for interactive chess playing, deploying the system live at the **2nd HKUST AI Film Festival** achieving **<1mm positioning error** across **>8 hours of continuous live operation**.
+- **IMU-Free Laser Odometry & SLAM Navigation:** Integrated **Richbeam 2D LiDAR** (`Lakibeam_ROS2_Driver`) with **`rf2o_laser_odometry`** to compute real-time range-flow 2D base odometry on an IMU-less robot; combined with **Nav2** and **reflective marker intensity tracking** for precise base positioning.
+- **MoveIt 2 Trajectory Planning & Public Showcase:** Engineered a **MoveIt 2** motion planning pipeline on the Piper arm for interactive chess playing, deploying the system live at the **2nd HKUST AI Film Festival** for **8+ hours of continuous live operation**.
 
 **SkyrisAI** \hfill \textbf{Dec 2025 – Jan 2026}
 
-*ROS Architecture Engineer*
+*ROS Developer Intern*
 
 - **ROS 2 System Architecture & Aerostack Integration:** Architected a modular ROS 2 software stack for an autonomous flying companion robot, experimenting with the **Aerostack2** framework to unify low-level flight control with high-level mission orchestration.
 - **Visual-Inertial SLAM & VIO Evaluation:** Benchmarked and evaluated Visual-Inertial Odometry (VIO) and SLAM pipelines (including **VINS-Fusion**) in Gazebo SITL simulation to optimize 3D localization accuracy under dynamic flight profiles.
 - **Behavior Tree & Autonomous Owner-Following:** Programmed custom **Behavior Tree** action nodes and state machine logic to enable real-time owner-following behavior and multi-layered safety fail-safes for aerial companion interaction.
 
 \needspace{7\baselineskip}
-**Home Team Science & Technology (HTX)** \hfill \textbf{May 2025 – Dec 2025}
+**Home Team Science & Technology Agency (HTX)** \hfill \textbf{May 2025 – Dec 2025}
 
 *Artificial Intelligence & Robotics Engineer Intern*
 
@@ -111,12 +110,12 @@ Semester Exchange
 
 ## PROJECTS & RESEARCH
 
-**Scene Graph-Grounded Semantic World Model Planning for Mobile Manipulation** \hfill \textbf{Aug 2026 – Present}
+**Autonomous Ackermann Robot Car (ROS 2)** | \href{https://github.com/Alvin0523/mdp}{GitHub} \hfill \textbf{Aug 2026 – Oct 2026}
 
-*NTU Final Year Project (FYP)* | *Supervised by Prof. Yoonchang Sung (NTU) & Dr. Dikai Liu (NVIDIA)*
+*NTU Multidisciplinary Design Project (MDP)* | *First approved ROS 2 team in NTU MDP*
 
-- **System Architecture & Research Focus:** Conducting literature review and architecture formulation on Graph World Models, extending 3D functional scene graphs to incorporate closed-loop physical feasibility verification for mobile manipulation.
-- **Technical Methodology:** Investigating Vision-Language Models (VLMs) to evaluate base-stance positioning offsets ($\Delta x, \Delta y$) and kinematic reachability constraints prior to motor execution to prevent action failure.
+- Built a ROS 2 Jazzy autonomy stack on Raspberry Pi 4 with **Hybrid A\* / Reeds-Shepp** planning, **LQR** path following, **EKF** localisation and **YOLO** image recognition; ranked **1st in Task 2** (fastest car, 8 s).
+- Wrote STM32F407 firmware with 100 Hz wheel-speed PI control, and used **ros2\_control** so the same code drives both the real car and the Gazebo simulation.
 
 **VLASH-Piper: Real-Time Async VLA Deployment on Edge** | \href{https://github.com/Alvin0523/vlash-piper}{GitHub} \hfill \textbf{Feb 2026 – May 2026}
 
@@ -130,8 +129,8 @@ Semester Exchange
 *HKUST COMP4471 (Deep Learning in Computer Vision)*
 
 - Adapted Depth Anything 3 (DA3) Mono Metric Large model for underwater environments by injecting rank-8 LoRA into DINOv2-L ViT backbone to overcome light attenuation and backscatter.
-- Trained on NVIDIA A100 GPUs using SILog + Sobel gradient loss, reducing **AbsRel error by 59%** and boosting $\delta < 1.25$ accuracy from **0.94% to 56.8%** on MIMIR-UW SeaFloor benchmark.
-- Fused per-pixel metric depth with YOLOv11-seg instance masks and Kalman filter target tracking within a ROS 2 Jazzy AUV 3D localization stack.
+- Trained on NVIDIA A100 GPUs using SILog + Sobel gradient loss, reducing **AbsRel error by 59%** and boosting $\delta < 1.25$ accuracy from **0.94% (zero-shot) to 56.8%** on MIMIR-UW SeaFloor benchmark.
+- Fused per-pixel metric depth with YOLOv11-seg instance masks and SQ-UKF target tracking within a ROS 2 Jazzy AUV 3D localization stack.
 
 **Scaling LLaVA-3D for Large-Scale 3D Scene Understanding** | \href{https://github.com/JunzhangLiu/LLaVA-3D}{GitHub} \hfill \textbf{Feb 2026 – May 2026}
 
@@ -149,11 +148,11 @@ Semester Exchange
 
 **Visual-Language Behavior Planning for Autonomous Underwater Vehicles** \hfill \textbf{Aug 2024 – May 2025}
 
-*NTU URECA Research Project (CCDS24070)* | *Supervised by Assoc Prof Nicholas Vun* | *Awarded NTU President Research Scholar*
+*NTU URECA Research Project (CCDS24070)* | *Supervised by Assoc Prof Nicholas Vun* | *Awarded NTU President's Research Scholar*
 
 - Deployed 4-bit AWQ quantized **VILA Vision-Language Model (VLM)** on **NVIDIA Jetson Orin NX** (16GB, Jetson AI Lab Docker container) operating under a 25W power budget for swimming pool AUV operations (~3.1s latency).
 - Integrated interactive Visual Question Answering (VQA) with **NanoDB Vector Database** to query behavior components and assemble XML **Behavior Trees (BT)** executed via **BehaviorTree.CPP** in ROS 2.
-- Validated end-to-end pipeline in SITL simulation and physical swimming pool trials on real AUV for basic autonomous actions (seeing obstacles, turning to avoid obstacles, and basic movement).
+- Validated end-to-end in SITL simulation and real-pool AUV trials for obstacle detection, obstacle avoidance and basic navigation.
 
 ## LEADERSHIP EXPERIENCE & CO-CURRICULAR ACTIVITIES
 
